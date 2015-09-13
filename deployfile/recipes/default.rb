@@ -1,5 +1,12 @@
 include_recipe 'aws'
 
+directory "/etc/viderian/conf" do
+  mode 0755
+  owner 'root'
+  group 'root'
+  action :create
+end
+
 aws_s3_file "/etc/viderian/conf/stv-project.properties" do
   bucket "viderian_backups"
   remote_path "artifacts/stv-project.properties"
