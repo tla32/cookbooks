@@ -1,5 +1,12 @@
 include_recipe 'aws'
 
+directory "/etc/viderian" do
+  mode 0755
+  owner 'root'
+  group 'root'
+  action :create
+end
+
 directory "/etc/viderian/conf" do
   mode 0755
   owner 'root'
